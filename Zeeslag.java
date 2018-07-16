@@ -3,7 +3,7 @@ package happyfriday;
 import java.util.Random;
 import java.util.Scanner;
  
-public class Zeeslag {
+class Zeeslag {
     static Scanner in = new Scanner(System.in);
  
     public static void main(String[] args) {
@@ -16,11 +16,11 @@ public class Zeeslag {
                 { '4', '-', '-', '-', '-', '-' },
                 { '5', '-', '-', '-', '-', '-' } };
         do{
-            choice = menu();
+        	choice = menu();
             switch(choice){
                 case 1: System.out.println("Voer een rij nummer in: ");
                         int gokrij = rowCheck();
-                        System.out.println("Voer een kolom hoofd1letter in: ");
+                        System.out.println("Voer een kolom hoofdletter in: ");
                         String gokkolom = columnCheck1();
                         int colLocation = columnCheck(gokkolom);
                         int ROWS = 6;
@@ -38,8 +38,8 @@ public class Zeeslag {
         }while(choice != 3);
     }
  
-    // method to display the main menu
-    public static int menu() {
+    // methode van het weergavemenu
+   static int menu() {
         System.out.println("Menu:");
         System.out.println("1. Fire Shot");
         System.out.println("2. Show Solution");
@@ -58,8 +58,8 @@ public class Zeeslag {
         return menuOption;
     }
  
-    // method to display board
-    public static void board() {
+    // methode van bord
+   static void board() {
         final int ROWS = 6;
         final int COLS = 6;
         char[][] values = { { ' ', 'A', 'B', 'C', 'D', 'E' },
@@ -76,8 +76,8 @@ public class Zeeslag {
         }
     }
  
-    // method to check input for guessing the row
-    public static int rowCheck() {
+    // methode om input te controleren
+    static int rowCheck() {
         int guessRow = 0;
         boolean test = true;
         while (test) {
@@ -97,7 +97,7 @@ public class Zeeslag {
         return guessRow;
     }
  
-    // method to guess column
+    // methode om kolom te gokken
     public static int locationCol() {
         System.out.println("Enter a Column Letter: ");
         in.nextLine();
@@ -126,7 +126,7 @@ public class Zeeslag {
     }
      
      
-    // method to check input for guessing the column
+    // methode om input te controleren
     public static int columnCheck(String guessColumn) {
         char c=' ';
         do{
@@ -158,7 +158,7 @@ public class Zeeslag {
         }
      
  
-    // method to check if shot hit or miss
+    // methode om te checken of er raak of mis is geschoten
     public static void hitormiss(int guessRow, int colLocation, int ROWS,
             int COLS, char[][] values) {
         Random rand = new Random();
